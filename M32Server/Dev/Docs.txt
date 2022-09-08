@@ -1,0 +1,84 @@
+SCRIBBLE STRIP:
+Color:
+    Black - { address: '/ch/01/config/color', args: [ { type: 'i', value: 0 } ] }
+    Red - { address: '/ch/01/config/color', args: [ { type: 'i', value: 1 } ] }
+    Green - { address: '/ch/01/config/color', args: [ { type: 'i', value: 2 } ] }
+    Yellow - { address: '/ch/01/config/color', args: [ { type: 'i', value: 3 } ] }
+    Blue - { address: '/ch/01/config/color', args: [ { type: 'i', value: 4 } ] }
+    Pink - { address: '/ch/01/config/color', args: [ { type: 'i', value: 5 } ] }
+    Cyan - { address: '/ch/01/config/color', args: [ { type: 'i', value: 6 } ] }
+    White - { address: '/ch/01/config/color', args: [ { type: 'i', value: 7 } ] }
+Icon:
+    Empty - { address: '/ch/01/config/icon', args: [ { type: 'i', value: 1 }
+    Continues on...
+Name:
+    NAMEHERE - { address: '/ch/01/config/name', args: [ { type: 's', value: 'NAMEHERE' } ] }
+
+
+FADERS
+Channels
+    Level of channel 1 to 0.5 - { address: '/ch/01/mix/fader', args: [ { type: 'f', value: 0.5 } ]}
+Dcas
+    Level of DCA 1 to 0.5 - { address: '/dca/1/fader', args: [ { type: 'f', value: 0.5 } ] }
+Buses
+    Level of Bus 1 to 0.5 - { address: '/bus/01/mix/fader', args: [ { type: 'f', value: 0.5 } ] }
+Mtxs
+    Level of MTX 1 to 0.5 - { address: '/mtx/01/mix/fader', args: [ { type: 'f', value: 0.5 } ] }
+Auxs
+    Level of AUX 1 to 0.5 - { address: '/auxin/01/mix/fader',args: [ { type: 'f', value: 0.5 } ]}
+Fxs
+    Level of FX 1 to 0.5 - { address: '/fxrtn/01/mix/fader', args: [ { type: 'f', value: 0.5 } ]}
+Main
+    Level of main to 0.5 - { address: '/main/st/mix/fader', args: [ { type: 'f', value: 0.5 } ]}
+
+
+SOLOS
+Notes
+    Numbers go in order. 01 starts page 1, 17 starts page 2, 33 starts page 3, 49 starts page 4. 65 starts MTX's (page 4 on right). 73 starts DCAs (page 1 on right). 80 (DCA8) ends it all.
+Ex.
+    Channel 1 solo ON - { address: '/-stat/solosw/01', args: [ { type: 'i', value: 1 } ]
+    Channel 1 solo OFF - { address: '/-stat/solosw/01', args: [ { type: 'i', value: 0 } ]
+
+
+MUTE
+Ex.
+    Mute channel 1 - { address: '/ch/01/mix/on', args: [ { type: 'i', value: 0 } ] }
+    Unmute channel 1 - { address: '/ch/01/mix/on', args: [ { type: 'i', value: 1 } ] }
+
+GAIN
+Notes
+    Gain ranges from -12 Db to 60 Db. It's specified by percentage just like faders. 0 is -12 Db, 1 is 60 Db, 
+
+    0 | -12 db
+    0.25 | 6 db
+    0.5 | 24 db
+    0.75 | 42 db
+    1 | 60 db
+
+    To convert gain to percentage, do (gain + 12)/72. To convert percentage to gain, do (72 * percentage) - 12
+Ex.
+    Channel 1 gain to -12 - { address: '/headamp/000/gain', args: [ { type: 'f', value: 0 } ] }
+    Channel 17 gain to 60 - { address: '/headamp/016/gain', args: [ { type: 'f', value: 1 } ] }
+
+
+0 | -12 db
+0.25 | 6 db
+0.5 | 24 db
+0.75 | 42 db
+1 | 60 db
+
+
+0 = 0
+0.5 = 50
+1 = 100
+
+0 | 0
+0.25 | 18
+0.5 | 36
+0.75 | 54
+1 | 72
+
+
++0.25 = +18
+
++18
