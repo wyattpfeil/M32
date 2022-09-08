@@ -1,0 +1,15 @@
+{
+  "name": "m32-js",
+  "version": "1.3.2",
+  "description": "Control the Midas m32 sound mixer via udp.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "npm-check-updates": "^13.1.1",
+    "osc": "^2.4.3"
+  }
+}
